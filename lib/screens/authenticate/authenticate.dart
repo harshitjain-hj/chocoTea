@@ -1,3 +1,4 @@
+import 'package:choco_tea/screens/authenticate/register.dart';
 import 'package:choco_tea/screens/authenticate/sign_in.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,7 @@ class _AuthenticateState extends State<Authenticate> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: SignIn(),
+      child: Register(),
     );
   }
 }
