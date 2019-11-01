@@ -2,6 +2,10 @@ import 'package:choco_tea/services/auth.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
+  
+  final Function toogleView;
+  SignIn({ this.toogleView});
+  
   @override
   _SignInState createState() => _SignInState();
 }
@@ -22,6 +26,15 @@ class _SignInState extends State<SignIn> {
         backgroundColor: Colors.brown[800],
         elevation: 0.5,
         title: Text('Sign in to ChocoTea'),
+        actions: <Widget>[
+          FlatButton.icon(
+            icon: Icon(Icons.person),
+            label: Text('Register'),
+            onPressed: () {
+              widget.toogleView();
+            },
+          )
+        ],
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
