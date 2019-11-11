@@ -1,3 +1,4 @@
+import 'package:choco_tea/screens/home/tea_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:choco_tea/models/tea.dart';
@@ -12,14 +13,12 @@ class _TeaListState extends State<TeaList> {
   Widget build(BuildContext context) {
 
     final teas = Provider.of<List<Tea>>(context);
-  teas.forEach((tea) {
-    print(tea.name);
-    print(tea.type);
-    print(tea.count);
-  });
 
-    return Container(
-      
+    return ListView.builder(
+      itemCount: teas.length,
+      itemBuilder: (context, index) {
+        return TeaTile(tea: teas[index]);
+      },
     );
   }
 }
