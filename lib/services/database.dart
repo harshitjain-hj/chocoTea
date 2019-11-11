@@ -1,3 +1,4 @@
+import 'package:choco_tea/models/tea.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DatabaseService {
@@ -16,9 +17,21 @@ class DatabaseService {
     });
   }
 
+  // Tea list from snapshot
+  List<Tea> _teaListFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.documents.map((doc){
+      return Tea(
+        name: doc.data['name'] ?? '',
+        count: doc.data['count'] ?? 0,
+        type: doc.data['type'] ?? 'none'
+      );
+    }).toList();
+  }
+
   // get teas stream
-  Stream<QuerySnapshot> get teas {
-    return teaCollection.snapshots();
+  Stream<List<Tea>> get teas {
+    return teaCollection.snapshots()
+    .map(_teaListFromSnapshot);
   }
 
 
