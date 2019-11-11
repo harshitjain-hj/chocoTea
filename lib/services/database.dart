@@ -16,4 +16,10 @@ class DatabaseService {
     });
   }
 
+  // get teas stream
+  Stream<QuerySnapshot> get teas {
+    return teaCollection.snapshots();
+  }
+
+
 }
