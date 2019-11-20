@@ -35,7 +35,7 @@ class _SettingsFormState extends State<SettingsForm> {
           ),
           SizedBox(height: 10.0),
           DropdownButtonFormField(
-            value: _currentTypes ?? '0',
+            //value: _currentTypes ?? '0',
             decoration: textInputDecoration,
             items: types.map((type) {
               return DropdownMenuItem(
@@ -44,6 +44,15 @@ class _SettingsFormState extends State<SettingsForm> {
               );
             }).toList(),
             onChanged: (val) => setState(() => _currentTypes = val ),
+          ),
+          Slider(
+            value: (_currentCount ?? 100 ).toDouble(),
+            activeColor: Colors.brown[_currentCount ?? 100],
+            inactiveColor: Colors.brown[_currentCount ?? 100],
+            min: 100.0,
+            max: 900.0,
+            divisions: 8,
+            onChanged: (val) => setState(() => _currentCount = val.round()),            
           ),
           SizedBox(height: 10.0),
           RaisedButton(
