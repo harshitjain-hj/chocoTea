@@ -1,4 +1,5 @@
 import 'package:choco_tea/models/tea.dart';
+import 'package:choco_tea/screens/home/settings_form.dart';
 import 'package:choco_tea/screens/home/tea_list.dart';
 import 'package:choco_tea/services/auth.dart';
 import 'package:choco_tea/services/database.dart';
@@ -16,7 +17,7 @@ class Home extends StatelessWidget {
       showModalBottomSheet(context: context, builder: (context) {
         return Container(
           padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
-          child: Text('bottom sheet'),
+          child: SettingsForm(),
         );
       });
     }
