@@ -15,9 +15,15 @@ class TeaTile extends StatelessWidget {
         child: ListTile(
           leading: CircleAvatar(
             radius: 25.0,
-            backgroundColor: Colors.brown[100],
+            backgroundColor: Colors.brown[400],
             backgroundImage: AssetImage('assets/tea-cup.png'),
-            child: Text(tea.count.toString()),
+            child: Text(
+              tea.count.toString(),
+              style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 25)
+            ),
           ),
           title: Text(tea.name),
           subtitle: Text(tea.type),

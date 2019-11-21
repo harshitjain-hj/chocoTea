@@ -1,6 +1,6 @@
 # choco_tea
 
-A new Flutter project.
+A Flutter app helping you store the tea preference of your Friends, Colleagues, Family members.
 
 ## Getting Started
 
