@@ -1,16 +1,17 @@
-# choco_tea
+# CHOCO_TEA
 
 A Flutter app helping you store the tea preference of your Friends, Colleagues, Family members.
 
-## Getting Started
+## Problem 
 
-This project is a starting point for a Flutter application.
+Instead of remembering the preferences of the tea type of each person an app to display all at once.
 
-A few resources to get you started if this is your first Flutter project:
+## Packages used
+  
+  - [firebase_auth](https://pub.dev/packages/firebase_auth)
+  - [cloud_firestore](https://pub.dev/packages/cloud_firestore)
+  - [flutter_spinkit](https://pub.dev/packages/flutter_spinkit)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Screenshots
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  [Screenshot](https://github.com/edoc99/chocoTea/blob/master/assets/screenshot.png)
