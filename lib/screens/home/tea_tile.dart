@@ -15,7 +15,8 @@ class TeaTile extends StatelessWidget {
         child: ListTile(
           leading: CircleAvatar(
             radius: 25.0,
-            backgroundColor: Colors.brown[300],
+            backgroundColor: Colors.brown[100],
+            backgroundImage: AssetImage('assets/tea-cup.png'),
             child: Text(tea.count.toString()),
           ),
           title: Text(tea.name),
