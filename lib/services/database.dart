@@ -1,4 +1,6 @@
 import 'package:choco_tea/models/tea.dart';
+import 'package:choco_tea/models/user.dart';
+import 'package:choco_tea/models/user.dart' as prefix0;
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DatabaseService {
@@ -28,11 +30,27 @@ class DatabaseService {
     }).toList();
   }
 
+  // userData from snapshot
+  prefix0.UserData _userDataFromSnapshot(DocumentSnapshot snapshot) {
+    return UserData(
+      uid: uid,
+      type: snapshot.data['name'],
+      name: snapshot.data['type'],
+      count: snapshot.data['count']
+    );
+  }
+
+
   // get teas stream
   Stream<List<Tea>> get teas {
     return teaCollection.snapshots()
     .map(_teaListFromSnapshot);
   }
 
+
+  // get user doc stream
+  Stream<UserData> get userData {
+    return teaCollection.document(uid).snapshots().map(_userDataFromSnapshot);
+  }
 
 }
