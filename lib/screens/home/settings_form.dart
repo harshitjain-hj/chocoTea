@@ -59,26 +59,7 @@ class _SettingsFormState extends State<SettingsForm> {
                     );
                   }).toList(),
                   onChanged: (val) => setState(() => _currentTypes = val ),
-                ),
-               
-                // Container(
-                //   child: Center(
-                //     child: Row(
-                //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                //       children: <Widget>[
-                //         IconButton(
-                //           icon: new Icon(Icons.remove),
-                //           onPressed: () => setState(() => _currentCount-- )
-                //         ),
-                //         Text((_currentCount ?? userData.count).toString()),
-                //         IconButton(
-                //           icon: new Icon(Icons.add),
-                //           onPressed: () => setState(() => _currentCount++ )
-                //           ),
-                //       ],
-                //     ),
-                //   ),
-                // ),
+                ),       
                 SizedBox(height: 10.0),
                 RaisedButton(
                   color: Colors.pink[400],
@@ -87,9 +68,15 @@ class _SettingsFormState extends State<SettingsForm> {
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () async {
-                    print(_currentName);
-                    print(_currentTypes);
-                    print(_currentCount);
+                    _currentCount = userData.count + 1;
+                   if(_formKey.currentState.validate()) {
+                     await DatabaseService(uid: user.uid).updateUserData(
+                      _currentTypes ?? userData.type,
+                      _currentName ?? userData.name,
+                      _currentCount ?? userData.count
+                    );
+                    Navigator.pop(context);
+                   }
                   }
                 ),
               ],

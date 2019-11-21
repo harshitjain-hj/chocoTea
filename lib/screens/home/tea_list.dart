@@ -12,7 +12,7 @@ class _TeaListState extends State<TeaList> {
   @override
   Widget build(BuildContext context) {
 
-    final teas = Provider.of<List<Tea>>(context);
+    final teas = Provider.of<List<Tea>>(context) ?? [];
 
     return ListView.builder(
       itemCount: teas.length,
