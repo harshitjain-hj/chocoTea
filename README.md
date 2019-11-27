@@ -13,5 +13,6 @@ Instead of remembering the preferences of the tea type of each person an app to 
   - [flutter_spinkit](https://pub.dev/packages/flutter_spinkit)
 
 ### Screenshots
-
-  [Screenshot](https://github.com/edoc99/chocoTea/blob/master/assets/screenshot.png)
+  
+  <img src="assets/screenshot.png" width="110%">
+  
